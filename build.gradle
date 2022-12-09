@@ -18,13 +18,10 @@ repositories {
 
 dependencies {
     // Implementation
-//    implementation("io.guilded.lib:guilded.java:0.0.10-Alpha")
     implementation group: 'io.guilded.lib', name: 'guilded.java', version: '0.0.10-Alpha'
     implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
-    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.5'
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.5'
 
 
     // Test

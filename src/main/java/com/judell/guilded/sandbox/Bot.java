@@ -11,7 +11,6 @@ import java.security.InvalidKeyException;
 
 public class Bot {
     protected static Client bot;
-    private final static Logger LOGGER = LoggerFactory.getLogger(Bot.class);
 
     public static void main(String[] args) {
         try {
@@ -28,9 +27,9 @@ public class Bot {
                     .addEventListeners(new Events())
                     .connectBlocking();
         } catch (ConnectException | InvalidKeyException connectException) {
-            LOGGER.error("Error");
+            System.err.println("Error");
         }
 
-        LOGGER.info(bot.getSelfUser().getName() + " is online");
+        System.out.println(bot.getSelfUser().getName() + " is online");
     }
 }
