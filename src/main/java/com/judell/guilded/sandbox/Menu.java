@@ -8,8 +8,8 @@ import io.guilded.lib.objekt.EmbedBuilder;
 public class Menu implements Command {
 
     @Override
-    public void onCommand(CommandSyntax s, MessageCreatedEvent e) {
-        e.getMessage().reply().setEmbed(new EmbedBuilder()
+    public void onCommand(CommandSyntax commandSyntax, MessageCreatedEvent messageCreatedEvent) {
+        messageCreatedEvent.getMessage().reply().setEmbed(new EmbedBuilder()
                         .setTitle("Card :receipt:")
                         .setDescription(x -> x
                                 .a(":tropical_drink: Tropical Drink, Perfect after a round in the water in the Caribbean").newLine(2)
