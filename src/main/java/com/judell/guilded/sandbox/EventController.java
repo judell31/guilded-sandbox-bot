@@ -17,8 +17,6 @@ public class EventController implements EventListener {
             case ":tea:" -> messageCreatedEvent.getMessage().addReactionEmote("90001589").queue();
             case ":glass_of_milk:" -> messageCreatedEvent.getMessage().addReactionEmote("90001587").queue();
             case ":mate_drink:" -> messageCreatedEvent.getMessage().addReactionEmote("90003215").queue();
-            case ".sb" -> new HelloWorld().onCommand(null, messageCreatedEvent);
-            case ".menu" -> new Menu().onCommand(null, messageCreatedEvent);
         }
     }
 }

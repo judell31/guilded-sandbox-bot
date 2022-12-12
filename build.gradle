@@ -1,7 +1,20 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
+    }
+}
+
 plugins {
     id 'java'
     id 'jacoco'
+    id 'application'
 }
+
+apply plugin: 'com.github.johnrengelman.shadow'
 
 group 'com.judell.guilded.sandbox.bot'
 version '1.0.0'
@@ -12,7 +25,6 @@ repositories {
     mavenCentral()
     maven {
         url 'https://gitlab.com/api/v4/projects/37875668/packages/maven'
-
     }
 }
 
@@ -23,7 +35,6 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
 
-
     // Test
     testImplementation group: 'junit', name: 'junit', version: '4.12'
     testImplementation group: 'org.hamcrest', name: 'hamcrest-core', version: '2.2'
@@ -33,6 +44,13 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.6.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+
+    jar {
+        manifest {
+            attributes 'Main-Class': 'com.judell.guilded.sandbox.Bot'
+        }
+        enabled=false
+    }
 }
 
 test {
@@ -46,3 +64,5 @@ jacocoTestReport {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+mainClassName = 'com.judell.bot.SandBoxBot'
