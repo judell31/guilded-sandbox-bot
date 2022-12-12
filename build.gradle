@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
     // Implementation
-    implementation group: 'io.guilded.lib', name: 'guilded.java', version: '0.0.10-Alpha'
+    implementation group: 'io.guilded.lib', name: 'guilded.java', version: '0.1.0-Beta'
     implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
