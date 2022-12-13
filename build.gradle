@@ -47,9 +47,10 @@ dependencies {
 
     jar {
         manifest {
-            attributes 'Main-Class': 'com.judell.guilded.sandbox.Bot'
+            attributes 'Main-Class': "${mainClassName}"
         }
         enabled=false
+        dependsOn(shadowJar { classifier = null })
     }
 }
 
@@ -65,4 +66,4 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-mainClassName = 'com.judell.bot.SandBoxBot'
+mainClassName = 'com.judell.guilded.sandbox.Bot'
